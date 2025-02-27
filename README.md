@@ -9,8 +9,7 @@ REST API built with NestJS framework.
 
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Running the Application](#running-application)
+- [ Installation And Running the Application](#installation-and-how-run-application)
 - [Authentication](#authentication)
 - [Project Structure](#project-structure)
 - [Environment Variables](#environment-variables)
@@ -26,15 +25,19 @@ REST API built with NestJS framework.
 - npm v9+
 - Git
 
-### Installation
+## Installation And How Run Application
 
-Clone the repository:
+Here are the steps you need to follow to install the dependencies.
 
-### Running Application
+1. Clone this repository to ur local
 
-```bash
+2. After that **cd** into the template directory then run this command to install all the dependencies
+
+```
 npm install
 ```
+
+3. Now run this command to start the developement server
 
 ```bash
 # development
@@ -60,14 +63,16 @@ http
 Copy
 GET /protected-route
 Authorization: Bearer <your-token>
-Project Structure
-Copy
+
+### Project Structure
+
 src/
 ├── auth/ # Authentication module
 ├── users/ # User management module
 ├── common/ # Shared utilities
 ├── config/ # Configuration files
 └── main.ts # Application entry file
+
 Environment Variables
 Create .env file in root directory:
 
