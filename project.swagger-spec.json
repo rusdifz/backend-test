@@ -1,0 +1,1177 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/v1/users/{id}": {
+      "get": {
+        "description": "",
+        "operationId": "UsersController_getDetail_v1",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "required": true,
+            "examples": {
+              "api-key": {
+                "summary": "api-key",
+                "value": "https://rb.gy/1e7y4t"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwgDetailUser"
+                }
+              }
+            }
+          }
+        },
+        "summary": "endpoint get user",
+        "tags": [
+          "Users"
+        ]
+      },
+      "put": {
+        "description": "",
+        "operationId": "UsersController_update_v1",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "required": true,
+            "examples": {
+              "api-key": {
+                "summary": "api-key",
+                "value": "https://rb.gy/1e7y4t"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwgUpdateUser"
+                }
+              }
+            }
+          }
+        },
+        "summary": "endpoint update user",
+        "tags": [
+          "Users"
+        ]
+      },
+      "delete": {
+        "description": "",
+        "operationId": "UsersController_delete_v1",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "required": true,
+            "examples": {
+              "api-key": {
+                "summary": "api-key",
+                "value": "https://rb.gy/1e7y4t"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwgDeleteResp"
+                }
+              }
+            }
+          }
+        },
+        "summary": "endpoint delete user",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/v1/users": {
+      "get": {
+        "description": "",
+        "operationId": "UsersController_getList_v1",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "required": true,
+            "examples": {
+              "api-key": {
+                "summary": "api-key",
+                "value": "https://rb.gy/1e7y4t"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "limit",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "sort",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "search_keyword",
+            "required": false,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwgListUser"
+                }
+              }
+            }
+          }
+        },
+        "summary": "endpoint get user list",
+        "tags": [
+          "Users"
+        ]
+      },
+      "post": {
+        "description": "",
+        "operationId": "UsersController_create_v1",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "required": true,
+            "examples": {
+              "api-key": {
+                "summary": "api-key",
+                "value": "https://rb.gy/1e7y4t"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwgCreateUser"
+                }
+              }
+            }
+          }
+        },
+        "summary": "endpoint create user",
+        "tags": [
+          "Users"
+        ]
+      },
+      "patch": {
+        "description": "",
+        "operationId": "UsersController_patch_v1",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "required": true,
+            "examples": {
+              "api-key": {
+                "summary": "api-key",
+                "value": "https://rb.gy/1e7y4t"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwgPathcUser"
+                }
+              }
+            }
+          }
+        },
+        "summary": "endpoint patch user",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/v1/users/bulk/dummy-user-to-db": {
+      "get": {
+        "description": "",
+        "operationId": "UsersController_bulkDummyApiToDB_v1",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "required": true,
+            "examples": {
+              "api-key": {
+                "summary": "api-key",
+                "value": "https://rb.gy/1e7y4t"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwgListUser"
+                }
+              }
+            }
+          }
+        },
+        "summary": "endpoint get dummy user",
+        "tags": [
+          "Users"
+        ]
+      }
+    },
+    "/v1/auth/login": {
+      "post": {
+        "operationId": "AuthController_login_v1",
+        "parameters": [
+          {
+            "name": "api-key",
+            "in": "header",
+            "required": true,
+            "examples": {
+              "api-key": {
+                "summary": "api-key",
+                "value": "https://rb.gy/1e7y4t"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SwgLogin"
+                }
+              }
+            }
+          }
+        },
+        "summary": "endpoint login",
+        "tags": [
+          "Auth"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "API",
+    "description": "Documentation for API Usage",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Meta": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "example": 200
+          },
+          "msg": {
+            "type": "string",
+            "example": "success"
+          }
+        },
+        "required": [
+          "code",
+          "msg"
+        ]
+      },
+      "ResUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "website": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object"
+          },
+          "company": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "username",
+          "password",
+          "email",
+          "phone",
+          "website",
+          "address",
+          "company"
+        ]
+      },
+      "SwgDetailUser": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "example": {
+              "id": 1,
+              "username": "Bret",
+              "name": "Leanne Graham",
+              "email": "Sincere@april.biz",
+              "password": "$2b$10$CN34LGGSERC92vajl7R9LeNKNkXYTvacfT1pF/bY2A4oMNIs4kiL6",
+              "phone": "1-770-736-8031 x56442",
+              "website": "hildegard.org",
+              "address": {
+                "street": "Kulas Light",
+                "suite": "Apt. 556",
+                "city": "Gwenborough",
+                "zipcode": "92998-3874",
+                "geo": {
+                  "lat": "-37.3159",
+                  "lng": "81.1496"
+                }
+              },
+              "company": {
+                "name": "Romaguera-Crona",
+                "catchPhrase": "Multi-layered client-server neural-net",
+                "bs": "harness real-time e-markets"
+              },
+              "created_at": "2025-02-27T23:05:56.090Z",
+              "created_by": "",
+              "updated_at": "2025-02-27T23:05:56.090Z",
+              "updated_by": "system",
+              "deleted_at": null,
+              "default": {
+                "id": 1,
+                "username": "Bret",
+                "name": "Leanne Graham",
+                "email": "Sincere@april.biz",
+                "password": "$2b$10$CN34LGGSERC92vajl7R9LeNKNkXYTvacfT1pF/bY2A4oMNIs4kiL6",
+                "phone": "1-770-736-8031 x56442",
+                "website": "hildegard.org",
+                "address": {
+                  "street": "Kulas Light",
+                  "suite": "Apt. 556",
+                  "city": "Gwenborough",
+                  "zipcode": "92998-3874",
+                  "geo": {
+                    "lat": "-37.3159",
+                    "lng": "81.1496"
+                  }
+                },
+                "company": {
+                  "name": "Romaguera-Crona",
+                  "catchPhrase": "Multi-layered client-server neural-net",
+                  "bs": "harness real-time e-markets"
+                },
+                "created_at": "2025-02-27T23:05:56.090Z",
+                "created_by": "",
+                "updated_at": "2025-02-27T23:05:56.090Z",
+                "updated_by": "system",
+                "deleted_at": null
+              }
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResUser"
+              }
+            ]
+          }
+        },
+        "required": [
+          "meta",
+          "data"
+        ]
+      },
+      "Pagination": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "number"
+          },
+          "total_page": {
+            "type": "number"
+          },
+          "page": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "total",
+          "total_page",
+          "page"
+        ]
+      },
+      "SwgListUser": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "example": {
+              "0": {
+                "id": 1,
+                "username": "Bret",
+                "name": "Leanne Graham",
+                "email": "Sincere@april.biz",
+                "password": "$2b$10$fnvdiAHQEv4DyttO3yKrIOV6rFeEnfaeVFjVPBr4lFSCH/IRu9afu",
+                "phone": "1-770-736-8031 x56442",
+                "website": "hildegard.org",
+                "address": {
+                  "street": "Kulas Light",
+                  "suite": "Apt. 556",
+                  "city": "Gwenborough",
+                  "zipcode": "92998-3874",
+                  "geo": {
+                    "lat": "-37.3159",
+                    "lng": "81.1496"
+                  }
+                },
+                "company": {
+                  "name": "Romaguera-Crona",
+                  "catchPhrase": "Multi-layered client-server neural-net",
+                  "bs": "harness real-time e-markets"
+                },
+                "created_at": "2025-02-27T23:05:40.524Z",
+                "created_by": "system",
+                "updated_at": "2025-02-27T23:05:40.524Z",
+                "updated_by": "system",
+                "deleted_at": null
+              },
+              "1": {
+                "id": 2,
+                "username": "Antonette",
+                "name": "Ervin Howell",
+                "email": "Shanna@melissa.tv",
+                "password": "$2b$10$JNxS5ZuYl.RM1SArQbKFd.mR.dufBrLp9KcoKjKC4Fikn10bS0lii",
+                "phone": "010-692-6593 x09125",
+                "website": "anastasia.net",
+                "address": {
+                  "street": "Victor Plains",
+                  "suite": "Suite 879",
+                  "city": "Wisokyburgh",
+                  "zipcode": "90566-7771",
+                  "geo": {
+                    "lat": "-43.9509",
+                    "lng": "-34.4618"
+                  }
+                },
+                "company": {
+                  "name": "Deckow-Crist",
+                  "catchPhrase": "Proactive didactic contingency",
+                  "bs": "synergize scalable supply-chains"
+                },
+                "created_at": "2025-02-27T23:05:40.526Z",
+                "created_by": "system",
+                "updated_at": "2025-02-27T23:05:40.526Z",
+                "updated_by": "system",
+                "deleted_at": null
+              },
+              "2": {
+                "id": 3,
+                "username": "Samantha",
+                "name": "Clementine Bauch",
+                "email": "Nathan@yesenia.net",
+                "password": "$2b$10$okUUT4kLleWjXMPcxbezGOZNby26J9tl8TGY70hmQQDQQwleHGnw.",
+                "phone": "1-463-123-4447",
+                "website": "ramiro.info",
+                "address": {
+                  "street": "Douglas Extension",
+                  "suite": "Suite 847",
+                  "city": "McKenziehaven",
+                  "zipcode": "59590-4157",
+                  "geo": {
+                    "lat": "-68.6102",
+                    "lng": "-47.0653"
+                  }
+                },
+                "company": {
+                  "name": "Romaguera-Jacobson",
+                  "catchPhrase": "Face to face bifurcated interface",
+                  "bs": "e-enable strategic applications"
+                },
+                "created_at": "2025-02-27T23:05:40.586Z",
+                "created_by": "system",
+                "updated_at": "2025-02-27T23:05:40.586Z",
+                "updated_by": "system",
+                "deleted_at": null
+              },
+              "length": 3,
+              "default": [
+                {
+                  "id": 1,
+                  "username": "Bret",
+                  "name": "Leanne Graham",
+                  "email": "Sincere@april.biz",
+                  "password": "$2b$10$fnvdiAHQEv4DyttO3yKrIOV6rFeEnfaeVFjVPBr4lFSCH/IRu9afu",
+                  "phone": "1-770-736-8031 x56442",
+                  "website": "hildegard.org",
+                  "address": {
+                    "street": "Kulas Light",
+                    "suite": "Apt. 556",
+                    "city": "Gwenborough",
+                    "zipcode": "92998-3874",
+                    "geo": {
+                      "lat": "-37.3159",
+                      "lng": "81.1496"
+                    }
+                  },
+                  "company": {
+                    "name": "Romaguera-Crona",
+                    "catchPhrase": "Multi-layered client-server neural-net",
+                    "bs": "harness real-time e-markets"
+                  },
+                  "created_at": "2025-02-27T23:05:40.524Z",
+                  "created_by": "system",
+                  "updated_at": "2025-02-27T23:05:40.524Z",
+                  "updated_by": "system",
+                  "deleted_at": null
+                },
+                {
+                  "id": 2,
+                  "username": "Antonette",
+                  "name": "Ervin Howell",
+                  "email": "Shanna@melissa.tv",
+                  "password": "$2b$10$JNxS5ZuYl.RM1SArQbKFd.mR.dufBrLp9KcoKjKC4Fikn10bS0lii",
+                  "phone": "010-692-6593 x09125",
+                  "website": "anastasia.net",
+                  "address": {
+                    "street": "Victor Plains",
+                    "suite": "Suite 879",
+                    "city": "Wisokyburgh",
+                    "zipcode": "90566-7771",
+                    "geo": {
+                      "lat": "-43.9509",
+                      "lng": "-34.4618"
+                    }
+                  },
+                  "company": {
+                    "name": "Deckow-Crist",
+                    "catchPhrase": "Proactive didactic contingency",
+                    "bs": "synergize scalable supply-chains"
+                  },
+                  "created_at": "2025-02-27T23:05:40.526Z",
+                  "created_by": "system",
+                  "updated_at": "2025-02-27T23:05:40.526Z",
+                  "updated_by": "system",
+                  "deleted_at": null
+                },
+                {
+                  "id": 3,
+                  "username": "Samantha",
+                  "name": "Clementine Bauch",
+                  "email": "Nathan@yesenia.net",
+                  "password": "$2b$10$okUUT4kLleWjXMPcxbezGOZNby26J9tl8TGY70hmQQDQQwleHGnw.",
+                  "phone": "1-463-123-4447",
+                  "website": "ramiro.info",
+                  "address": {
+                    "street": "Douglas Extension",
+                    "suite": "Suite 847",
+                    "city": "McKenziehaven",
+                    "zipcode": "59590-4157",
+                    "geo": {
+                      "lat": "-68.6102",
+                      "lng": "-47.0653"
+                    }
+                  },
+                  "company": {
+                    "name": "Romaguera-Jacobson",
+                    "catchPhrase": "Face to face bifurcated interface",
+                    "bs": "e-enable strategic applications"
+                  },
+                  "created_at": "2025-02-27T23:05:40.586Z",
+                  "created_by": "system",
+                  "updated_at": "2025-02-27T23:05:40.586Z",
+                  "updated_by": "system",
+                  "deleted_at": null
+                }
+              ]
+            },
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResUser"
+            }
+          },
+          "pagination": {
+            "example": {
+              "total": 2,
+              "total_page": 1,
+              "page": 1,
+              "default": {
+                "total": 2,
+                "total_page": 1,
+                "page": 1
+              }
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Pagination"
+              }
+            ]
+          }
+        },
+        "required": [
+          "meta",
+          "data",
+          "pagination"
+        ]
+      },
+      "MetaUpsert": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "example": 201
+          },
+          "msg": {
+            "type": "string",
+            "example": "success"
+          }
+        },
+        "required": [
+          "code",
+          "msg"
+        ]
+      },
+      "Address": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string",
+            "example": "Bojong Depok Baru"
+          },
+          "suite": {
+            "type": "string",
+            "example": "perumahan"
+          },
+          "city": {
+            "type": "string",
+            "example": "Bogor"
+          },
+          "zipcode": {
+            "type": "string",
+            "example": "16913"
+          },
+          "geo": {
+            "type": "object",
+            "example": {
+              "geo_lat": "-37.3159",
+              "geo_lng": "81.1496"
+            }
+          }
+        },
+        "required": [
+          "street",
+          "suite",
+          "city",
+          "zipcode",
+          "geo"
+        ]
+      },
+      "Company": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "PT. Digdaya Olah Teknologi (DOT) Indonesia"
+          },
+          "catchPhrase": {
+            "type": "string",
+            "example": "Multi-layered client-server neural-net"
+          },
+          "bs": {
+            "type": "string",
+            "example": "harness real-time e-markets"
+          }
+        },
+        "required": [
+          "name",
+          "catchPhrase",
+          "bs"
+        ]
+      },
+      "ReqCreateUserDTO": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "rusdifz"
+          },
+          "email": {
+            "type": "string",
+            "example": "fauzanrusdi20@gmail.com"
+          },
+          "name": {
+            "type": "string",
+            "example": "fauzan rusdi"
+          },
+          "password": {
+            "type": "string",
+            "example": "Testpass98_"
+          },
+          "phone": {
+            "type": "string",
+            "example": "+6287870702538"
+          },
+          "website": {
+            "type": "string",
+            "example": "www.razone.com"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          }
+        },
+        "required": [
+          "username",
+          "email",
+          "name",
+          "password",
+          "phone",
+          "website",
+          "address",
+          "company"
+        ]
+      },
+      "SwgCreateUser": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/MetaUpsert"
+          },
+          "data": {
+            "example": {
+              "name": "Leanne Graham",
+              "username": "Bret",
+              "password": "Tester98_",
+              "email": "Sincere@april.biz",
+              "address": {
+                "street": "Kulas Light",
+                "suite": "Apt. 556",
+                "city": "Gwenborough",
+                "zipcode": "92998-3874",
+                "geo": {
+                  "lat": "-37.3159",
+                  "lng": "81.1496"
+                }
+              },
+              "phone": "1-770-736-8031 x56442",
+              "website": "hildegard.org",
+              "company": {
+                "name": "Romaguera-Crona",
+                "catchPhrase": "Multi-layered client-server neural-net",
+                "bs": "harness real-time e-markets"
+              },
+              "default": {
+                "name": "Leanne Graham",
+                "username": "Bret",
+                "password": "Tester98_",
+                "email": "Sincere@april.biz",
+                "address": {
+                  "street": "Kulas Light",
+                  "suite": "Apt. 556",
+                  "city": "Gwenborough",
+                  "zipcode": "92998-3874",
+                  "geo": {
+                    "lat": "-37.3159",
+                    "lng": "81.1496"
+                  }
+                },
+                "phone": "1-770-736-8031 x56442",
+                "website": "hildegard.org",
+                "company": {
+                  "name": "Romaguera-Crona",
+                  "catchPhrase": "Multi-layered client-server neural-net",
+                  "bs": "harness real-time e-markets"
+                }
+              }
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReqCreateUserDTO"
+              }
+            ]
+          }
+        },
+        "required": [
+          "meta",
+          "data"
+        ]
+      },
+      "ReqUpdateUserDTO": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "rusdifz"
+          },
+          "email": {
+            "type": "string",
+            "example": "fauzanrusdi20@gmail.com"
+          },
+          "name": {
+            "type": "string",
+            "example": "fauzan rusdi"
+          },
+          "password": {
+            "type": "string",
+            "example": "Testpass98_"
+          },
+          "phone": {
+            "type": "string",
+            "example": "+6287870702538"
+          },
+          "website": {
+            "type": "string",
+            "example": "www.razone.com"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "id": {
+            "type": "number",
+            "example": 1
+          }
+        },
+        "required": [
+          "username",
+          "email",
+          "name",
+          "password",
+          "phone",
+          "website",
+          "address",
+          "company",
+          "id"
+        ]
+      },
+      "SwgUpdateUser": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/MetaUpsert"
+          },
+          "data": {
+            "example": {
+              "id": 1,
+              "name": "Leanne Graham",
+              "username": "Bret",
+              "password": "Tester98_",
+              "email": "Sincere@april.biz",
+              "address": {
+                "street": "Kulas Light",
+                "suite": "Apt. 556",
+                "city": "Gwenborough",
+                "zipcode": "92998-3874",
+                "geo": {
+                  "lat": "-37.3159",
+                  "lng": "81.1496"
+                }
+              },
+              "phone": "1-770-736-8031 x56442",
+              "website": "hildegard.org",
+              "company": {
+                "name": "Romaguera-Crona",
+                "catchPhrase": "Multi-layered client-server neural-net",
+                "bs": "harness real-time e-markets"
+              },
+              "default": {
+                "id": 1,
+                "name": "Leanne Graham",
+                "username": "Bret",
+                "password": "Tester98_",
+                "email": "Sincere@april.biz",
+                "address": {
+                  "street": "Kulas Light",
+                  "suite": "Apt. 556",
+                  "city": "Gwenborough",
+                  "zipcode": "92998-3874",
+                  "geo": {
+                    "lat": "-37.3159",
+                    "lng": "81.1496"
+                  }
+                },
+                "phone": "1-770-736-8031 x56442",
+                "website": "hildegard.org",
+                "company": {
+                  "name": "Romaguera-Crona",
+                  "catchPhrase": "Multi-layered client-server neural-net",
+                  "bs": "harness real-time e-markets"
+                }
+              }
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReqUpdateUserDTO"
+              }
+            ]
+          }
+        },
+        "required": [
+          "meta",
+          "data"
+        ]
+      },
+      "ReqPatchUserDTO": {
+        "type": "object",
+        "properties": {}
+      },
+      "SwgPathcUser": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/MetaUpsert"
+          },
+          "data": {
+            "example": {
+              "name": "Leanne Graham",
+              "password": "Tester98_",
+              "email": "Sincere@april.biz",
+              "phone": "1-770-736-8031 x56442",
+              "website": "hildegard.org",
+              "default": {
+                "name": "Leanne Graham",
+                "password": "Tester98_",
+                "email": "Sincere@april.biz",
+                "phone": "1-770-736-8031 x56442",
+                "website": "hildegard.org"
+              }
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ReqPatchUserDTO"
+              }
+            ]
+          }
+        },
+        "required": [
+          "meta",
+          "data"
+        ]
+      },
+      "SwgDeleteResp": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "meta",
+          "data"
+        ]
+      },
+      "LoginDTO": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "example": "rusdifz"
+          },
+          "email": {
+            "type": "string",
+            "example": "fauzanrusdi20@gmail.com"
+          },
+          "password": {
+            "type": "string",
+            "example": "Testpass98_"
+          }
+        },
+        "required": [
+          "username",
+          "email",
+          "password"
+        ]
+      },
+      "SwgLogin": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "data": {
+            "type": "string",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMSIsInVzZXJu\n    YW1lIjoicnVzZGlmeiIsIm5hbWUiOiJmYXV6YW4gcnVzZGkiLCJlbWFpbCI6ImZhdXphbnJ1c2RpMjBAZ\n    21haWwuY29tIiwicGhvbmUiOm51bGwsIndlYnNpdGUiOm51bGwsInN0cmVldCI6bnVsbCwic3VpdGUiOm51\n    bGwsImNpdHkiOm51bGwsInppcGNvZGUiOm51bGwsImdlb19sYXQiOm51bGwsImdlb19sbmciOm51bGwsImNvbXBh\n    bnlfbmFtZSI6bnVsbCwiY29tcGFueV9jYXRjaFBocmFzZSI6bnVsbCwiY29tcGFueV9icyI6bnVsbCwiY3JlYXRlZF9h\n    dCI6IjIwMjUtMDItMjdUMjM6MjA6NDIuMjUyWiIsImNyZWF0ZWRfYnkiOm51bGwsInVwZGF0ZWRfYXQiOiIyMDI1LTAyLTI\n    3VDIzOjIwOjQyLjI1MloiLCJ1cGRhdGVkX2J5IjpudWxsLCJkZWxldGVkX2F0IjpudWxsfSwiaWF0IjoxNzQwNjk4NDU5fQ.CS\n    Bc-uQUgDq7eVpWgshVS0I7tH6VyjxE6VUs0_Z2W3E"
+          }
+        },
+        "required": [
+          "meta",
+          "data"
+        ]
+      }
+    }
+  }
+}

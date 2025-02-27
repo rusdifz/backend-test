@@ -1,0 +1,29 @@
+{
+  "id": 1,
+  "username": "Bret",
+  "name": "Leanne Graham",
+  "email": "Sincere@april.biz",
+  "password": "$2b$10$CN34LGGSERC92vajl7R9LeNKNkXYTvacfT1pF/bY2A4oMNIs4kiL6",
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  },
+  "created_at": "2025-02-27T23:05:56.090Z",
+  "created_by": "",
+  "updated_at": "2025-02-27T23:05:56.090Z",
+  "updated_by": "system",
+  "deleted_at": null
+}

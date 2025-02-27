@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "username": "Bret",
+    "name": "Leanne Graham",
+    "email": "Sincere@april.biz",
+    "password": "$2b$10$fnvdiAHQEv4DyttO3yKrIOV6rFeEnfaeVFjVPBr4lFSCH/IRu9afu",
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    },
+    "created_at": "2025-02-27T23:05:40.524Z",
+    "created_by": "system",
+    "updated_at": "2025-02-27T23:05:40.524Z",
+    "updated_by": "system",
+    "deleted_at": null
+  },
+  {
+    "id": 2,
+    "username": "Antonette",
+    "name": "Ervin Howell",
+    "email": "Shanna@melissa.tv",
+    "password": "$2b$10$JNxS5ZuYl.RM1SArQbKFd.mR.dufBrLp9KcoKjKC4Fikn10bS0lii",
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "address": {
+      "street": "Victor Plains",
+      "suite": "Suite 879",
+      "city": "Wisokyburgh",
+      "zipcode": "90566-7771",
+      "geo": {
+        "lat": "-43.9509",
+        "lng": "-34.4618"
+      }
+    },
+    "company": {
+      "name": "Deckow-Crist",
+      "catchPhrase": "Proactive didactic contingency",
+      "bs": "synergize scalable supply-chains"
+    },
+    "created_at": "2025-02-27T23:05:40.526Z",
+    "created_by": "system",
+    "updated_at": "2025-02-27T23:05:40.526Z",
+    "updated_by": "system",
+    "deleted_at": null
+  },
+  {
+    "id": 3,
+    "username": "Samantha",
+    "name": "Clementine Bauch",
+    "email": "Nathan@yesenia.net",
+    "password": "$2b$10$okUUT4kLleWjXMPcxbezGOZNby26J9tl8TGY70hmQQDQQwleHGnw.",
+    "phone": "1-463-123-4447",
+    "website": "ramiro.info",
+    "address": {
+      "street": "Douglas Extension",
+      "suite": "Suite 847",
+      "city": "McKenziehaven",
+      "zipcode": "59590-4157",
+      "geo": {
+        "lat": "-68.6102",
+        "lng": "-47.0653"
+      }
+    },
+    "company": {
+      "name": "Romaguera-Jacobson",
+      "catchPhrase": "Face to face bifurcated interface",
+      "bs": "e-enable strategic applications"
+    },
+    "created_at": "2025-02-27T23:05:40.586Z",
+    "created_by": "system",
+    "updated_at": "2025-02-27T23:05:40.586Z",
+    "updated_by": "system",
+    "deleted_at": null
+  }
+]
