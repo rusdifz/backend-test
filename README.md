@@ -10,7 +10,7 @@ REST API built with NestJS framework.
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Running the Application](#running-the-application)
+- [Running the Application](#running-application)
 - [Authentication](#authentication)
 - [Project Structure](#project-structure)
 - [Environment Variables](#environment-variables)
@@ -28,28 +28,25 @@ REST API built with NestJS framework.
 
 ### Installation
 
-1. Clone the repository:
+Clone the repository:
+
+### Running Application
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-Install dependencies:
-
-bash
-Copy
 npm install
-Running the Application
-Development mode
-bash
-Copy
-npm run start
-Watch mode (auto-reload for development)
-bash
-Copy
-npm run start:dev
-Production mode
-bash
-Copy
-npm run start:prod
+```
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
 Authentication
 This API uses JWT for authentication. You can use the following test token for authorization:
 
@@ -66,11 +63,11 @@ Authorization: Bearer <your-token>
 Project Structure
 Copy
 src/
-├── auth/           # Authentication module
-├── users/          # User management module
-├── common/         # Shared utilities
-├── config/         # Configuration files
-└── main.ts         # Application entry file
+├── auth/ # Authentication module
+├── users/ # User management module
+├── common/ # Shared utilities
+├── config/ # Configuration files
+└── main.ts # Application entry file
 Environment Variables
 Create .env file in root directory:
 
@@ -92,4 +89,7 @@ Acknowledgements
 Built with NestJS
 
 Authentication powered by JWT
+
+```
+
 ```
