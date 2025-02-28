@@ -3,7 +3,7 @@ import { DataSource, DeepPartial, EntityTarget, Repository } from 'typeorm';
 
 import { UsersEntity } from './entities/users.entity';
 import { InjectDataSource } from '@nestjs/typeorm';
-import { BaseRepository } from 'src/common/repository.base';
+import { BaseRepository } from 'src/common/repositories/base.repository';
 
 @Injectable()
 export class UsersRepository extends BaseRepository<UsersEntity> {

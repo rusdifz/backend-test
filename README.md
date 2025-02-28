@@ -50,51 +50,64 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-Authentication
-This API uses JWT for authentication. You can use the following test token for authorization:
+### API Documentation
 
-Bearer Token:
+untuk dokumentasi penggunaan endpoint jalankan : http://localhost:3000/doc
 
-Copy
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiMSIsInVzZXJuYW1lIjoicnVzZGlmeiIsIm5hbWUiOiJmYXV6YW4gcnVzZGkiLCJlbWFpbCI6ImZhdXphbnJ1c2RpMjBAZ21haWwuY29tIiwicGhvbmUiOm51bGwsIndlYnNpdGUiOm51bGwsInN0cmVldCI6bnVsbCwic3VpdGUiOm51bGwsImNpdHkiOm51bGwsInppcGNvZGUiOm51bGwsImdlb19sYXQiOm51bGwsImdlb19sbmciOm51bGwsImNvbXBhbnlfbmFtZSI6bnVsbCwiY29tcGFueV9jYXRjaFBocmFzZSI6bnVsbCwiY29tcGFueV9icyI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjUtMDItMjdUMjM6MjA6NDIuMjUyWiIsImNyZWF0ZWRfYnkiOm51bGwsInVwZGF0ZWRfYXQiOiIyMDI1LTAyLTI3VDIzOjIwOjQyLjI1MloiLCJ1cGRhdGVkX2J5IjpudWxsLCJkZWxldGVkX2F0IjpudWxsfSwiaWF0IjoxNzQwNjk4NDU5fQ.CSBc-uQUgDq7eVpWgshVS0I7tH6VyjxE6VUs0_Z2W3E
-Usage:
+karena disini saya menambahkan auth jwt, untuk itu bisa login menggunakan curl ini :
 
-http
-Copy
-GET /protected-route
-Authorization: Bearer <your-token>
+curl --location 'http://localhost:3000/v1/auth/login' \
+--header 'api-key: https://rb.gy/1e7y4t' \
+--header 'Content-Type: application/json' \
+--data '{
+"username": "rusdifz",
+"password": "Salwasalsabil98\_"
+}'
 
 ### Project Structure
 
 src/
-├── auth/ # Authentication module
-├── users/ # User management module
-├── common/ # Shared utilities
+├── common/ # Shared utilities and constants
+│ ├── consts/ # Application constants
+│ ├── decorators/ # Custom decorators
+│ ├── dummy-json/ # Dummy JSON data for testing
+│ ├── enums/ # Application enums
+│ ├── helpers/ # Helper functions
+│ ├── interfaces/ # Shared interfaces
+│ ├── repositories/ # Base repository classes
+│ └── swaggers/ # Swagger documentation utilities
+│
 ├── config/ # Configuration files
-└── main.ts # Application entry file
+│ ├── db/ # Database configuration
+│ └── redis/ # Redis configuration
+│
+├── libs/ # Reusable libraries
+│ ├── axios/ # Axios HTTP client wrapper
+│ └── redis/ # Redis client wrapper
+│
+├── middlewares/ # Custom middlewares
+│ ├── guards/ # Authentication guards
+│ └── interceptors/ # Response interceptors
+│
+├── modules/ # Feature modules
+│ ├── users/ # User management module
+│ │ ├── dto/ # Data Transfer Objects (DTOs)
+│ │ ├── interfaces/ # User-related interfaces
+│ │ ├── entities/ # User entities
+│ │ ├── mappings/ # Data mapping utilities
+│ │ └── swaggers/ # Swagger documentation for users
+│ │
+│ └── auth/ # Authentication module
+│ ├── dto/ # Auth-related DTOs
+│ └── swaggers/ # Swagger documentation for auth
+│
+├── app.module.ts # Root application module
+└── main.ts # Application entry point
 
-Environment Variables
-Create .env file in root directory:
+###
 
-env
-Copy
-PORT=3000
-DATABASE_URL=your-db-connection-string
-JWT_SECRET=your-jwt-secret-key
-API Documentation
-API documentation is available via Swagger UI when running in development mode:
-
-http
-Copy
-http://localhost:3000/api
 License
 This project is licensed under the MIT License.
 
-Acknowledgements
-Built with NestJS
-
+Built with ❤️ using NestJS
 Authentication powered by JWT
-
-```
-
-```
