@@ -10,6 +10,7 @@ import {
   IsOptional,
   IsString,
   IsStrongPassword,
+  ValidateIf,
   ValidateNested,
 } from 'class-validator';
 import { PartialType } from '@nestjs/mapped-types';
@@ -121,6 +122,7 @@ export class ReqCreateUserDTO implements Partial<IUser> {
   name: string;
 
   @ApiProperty({ example: 'Testpass98_' })
+  @ValidateIf((o) => !o.dummy)
   @IsNotEmpty()
   @IsStrongPassword()
   password: string;

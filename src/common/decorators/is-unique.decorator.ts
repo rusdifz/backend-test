@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { InjectDataSource, InjectEntityManager } from '@nestjs/typeorm';
+import { InjectEntityManager } from '@nestjs/typeorm';
 import {
   registerDecorator,
   ValidationArguments,
@@ -7,7 +7,6 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface,
 } from 'class-validator';
-// import { UsersEntity } from 'src/modules/users/entities/users.entity';
 import { EntityManager, FindOneOptions, Not } from 'typeorm';
 
 @ValidatorConstraint({ async: true })
@@ -16,27 +15,29 @@ export class IsUniqueConstraint implements ValidatorConstraintInterface {
   constructor(@InjectEntityManager() private entityManager: EntityManager) {}
 
   async validate(value: any, args: ValidationArguments): Promise<boolean> {
-    const [EntityClass, entityProperty] = args.constraints;
+    const [entityClass, entityProperty] = args.constraints;
+    const repositorys = this.entityManager.getRepository(entityClass);
 
-    if (!args.object['dummy']) {
-      console.log('nonoo');
+    const where: FindOneOptions = {
+      where: { [entityProperty]: value },
+    };
 
-      const repository = this.entityManager.getRepository(EntityClass);
-
-      const where: FindOneOptions = {
-        where: { [entityProperty]: value },
-      };
-
-      if (args.object['id']) {
-        where.where['id'] = Not(args.object['office_id']);
-      }
-
-      const foundEntity = await repository.findOne(where);
-
-      return !foundEntity;
+    if (args.object['id']) {
+      where.where['id'] = Not(args.object['office_id']);
     }
 
-    return true;
+    //handling for dto from dummy API
+    if (entityProperty == 'username') {
+      where.where = { username: value };
+    }
+
+    if (entityProperty == 'email') {
+      where.where = { email: value };
+    }
+
+    const foundEntity = await repositorys.findOne(where);
+
+    return !foundEntity;
   }
 
   defaultMessage(args: ValidationArguments): string {

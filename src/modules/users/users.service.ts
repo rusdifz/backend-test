@@ -38,7 +38,9 @@ export class UsersService implements OnModuleInit {
   private readonly endpoint = '/users';
 
   async getDetail(id: number) {
+    await this.repository.delete({});
     const getCache = await this.cache.get(`user_${id}`);
+    console.log('get cache', getCache);
 
     if (getCache) {
       return getCache;
@@ -146,6 +148,7 @@ export class UsersService implements OnModuleInit {
         for (const user of dummyUsers) {
           //validate DTO before insert db
           const userDto = plainToInstance(ReqCreateUserDTO, user);
+
           const errors = await validate(userDto);
 
           if (errors.length === 0) {
@@ -169,6 +172,8 @@ export class UsersService implements OnModuleInit {
   async onModuleInit() {
     // Check if data already exists
     const count = await this.repository.count();
+    console.log('count data in postgree ', count);
+
     if (count === 0) {
       // Insert default data if no records exist
       await this.repository.save([

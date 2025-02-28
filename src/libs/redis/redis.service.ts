@@ -9,20 +9,6 @@ export class RedisService {
 
   readonly exp = 24 * 60 * 30; // 12 hours
 
-  // async connection() {
-  //   const client = await this.cacheService.store.getClient();
-
-  //   await client.on('error', () => {
-  //     console.log('redis client connection loss');
-  //   });
-
-  //   await client.on('connect', () => {
-  //     console.log('redis client connected');
-  //   });
-
-  //   return client.connected;
-  // }
-
   async get(key: string) {
     try {
       const data = await this.cacheService.get<string>(key);
