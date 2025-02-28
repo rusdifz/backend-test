@@ -67,47 +67,54 @@ curl --location 'http://localhost:3000/v1/auth/login' \
 ### Project Structure
 
 src/
-├── common/ # Shared utilities and constants
-│ ├── consts/ # Application constants
-│ ├── decorators/ # Custom decorators
-│ ├── dummy-json/ # Dummy JSON data for testing
-│ ├── enums/ # Application enums
-│ ├── helpers/ # Helper functions
-│ ├── interfaces/ # Shared interfaces
-│ ├── repositories/ # Base repository classes
-│ └── swaggers/ # Swagger documentation utilities
+├── common/           # Shared utilities and constants
+│ ├── consts/         # Application constants
+│ ├── decorators/     # Custom decorators
+│ ├── dummy-json/     # Dummy JSON data for testing
+│ ├── enums/          # Application enums
+│ ├── helpers/        # Helper functions
+│ ├── interfaces/     # Shared interfaces
+│ ├── repositories/   # Base repository classes
+│ └── swaggers/       # Swagger documentation utilities
 │
-├── config/ # Configuration files
-│ ├── db/ # Database configuration
-│ └── redis/ # Redis configuration
+├── config/           # Configuration files
+│ ├── db/             # Database configuration
+│ └── redis/          # Redis configuration
 │
-├── libs/ # Reusable libraries
-│ ├── axios/ # Axios HTTP client wrapper
-│ └── redis/ # Redis client wrapper
+├── libs/             # Reusable libraries
+│ ├── axios/          # Axios HTTP client wrapper
+│ └── redis/          # Redis client wrapper
 │
-├── middlewares/ # Custom middlewares
-│ ├── guards/ # Authentication guards
-│ └── interceptors/ # Response interceptors
+├── middlewares/      # Custom middlewares
+│ ├── guards/         # Authentication guards
+│ └── interceptors/   # Response interceptors
 │
-├── modules/ # Feature modules
-│ ├── users/ # User management module
-│ │ ├── dto/ # Data Transfer Objects (DTOs)
-│ │ ├── interfaces/ # User-related interfaces
-│ │ ├── entities/ # User entities
-│ │ ├── mappings/ # Data mapping utilities
-│ │ └── swaggers/ # Swagger documentation for users
+├── modules/          # Feature modules
+│ ├── users/          # User management module
+│ │ ├── dto/          # Data Transfer Objects (DTOs)
+│ │ ├── interfaces/   # User-related interfaces
+│ │ ├── entities/     # User entities
+│ │ ├── mappings/     # Data mapping utilities
+│ │ └── swaggers/     # Swagger documentation for users
 │ │
-│ └── auth/ # Authentication module
-│ ├── dto/ # Auth-related DTOs
-│ └── swaggers/ # Swagger documentation for auth
+│ └── auth/           # Authentication module
+│ ├── dto/            # Auth-related DTOs
+│ └── swaggers/       # Swagger documentation for auth
 │
-├── app.module.ts # Root application module
-└── main.ts # Application entry point
+├── app.module.ts     # Root application module
+└── main.ts           # Application entry point
 
-###
+## Support
 
-License
-This project is licensed under the MIT License.
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-Built with ❤️ using NestJS
-Authentication powered by JWT
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
+
