@@ -66,43 +66,45 @@ curl --location 'http://localhost:3000/v1/auth/login' \
 
 ### Project Structure
 
-src/
-├── common/           # Shared utilities and constants
-│ ├── consts/         # Application constants
-│ ├── decorators/     # Custom decorators
-│ ├── dummy-json/     # Dummy JSON data for testing
-│ ├── enums/          # Application enums
-│ ├── helpers/        # Helper functions
-│ ├── interfaces/     # Shared interfaces
-│ ├── repositories/   # Base repository classes
-│ └── swaggers/       # Swagger documentation utilities
-│
-├── config/           # Configuration files
-│ ├── db/             # Database configuration
-│ └── redis/          # Redis configuration
-│
-├── libs/             # Reusable libraries
-│ ├── axios/          # Axios HTTP client wrapper
-│ └── redis/          # Redis client wrapper
-│
-├── middlewares/      # Custom middlewares
-│ ├── guards/         # Authentication guards
-│ └── interceptors/   # Response interceptors
-│
-├── modules/          # Feature modules
-│ ├── users/          # User management module
-│ │ ├── dto/          # Data Transfer Objects (DTOs)
-│ │ ├── interfaces/   # User-related interfaces
-│ │ ├── entities/     # User entities
-│ │ ├── mappings/     # Data mapping utilities
-│ │ └── swaggers/     # Swagger documentation for users
-│ │
-│ └── auth/           # Authentication module
-│ ├── dto/            # Auth-related DTOs
-│ └── swaggers/       # Swagger documentation for auth
-│
-├── app.module.ts     # Root application module
-└── main.ts           # Application entry point
+    .
+    ├── ...
+    src/
+    ├── common/           # Shared utilities and constants
+    │ ├── consts/         # Application constants
+    │ ├── decorators/     # Custom decorators
+    │ ├── dummy-json/     # Dummy JSON data for testing
+    │ ├── enums/          # Application enums
+    │ ├── helpers/        # Helper functions
+    │ ├── interfaces/     # Shared interfaces
+    │ ├── repositories/   # Base repository classes
+    │ └── swaggers/       # Swagger documentation utilities
+    │
+    ├── config/           # Configuration files
+    │ ├── db/             # Database configuration
+    │ └── redis/          # Redis configuration
+    │
+    ├── libs/             # Reusable libraries
+    │ ├── axios/          # Axios HTTP client wrapper
+    │ └── redis/          # Redis client wrapper
+    │
+    ├── middlewares/      # Custom middlewares
+    │ ├── guards/         # Authentication guards
+    │ └── interceptors/   # Response interceptors
+    │
+    ├── modules/          # Feature modules
+    │ ├── users/          # User management module
+    │ │ ├── dto/          # Data Transfer Objects (DTOs)
+    │ │ ├── interfaces/   # User-related interfaces
+    │ │ ├── entities/     # User entities
+    │ │ ├── mappings/     # Data mapping utilities
+    │ │ └── swaggers/     # Swagger documentation for users
+    │ │
+    │ └── auth/           # Authentication module
+    │ ├── dto/            # Auth-related DTOs
+    │ └── swaggers/       # Swagger documentation for auth
+    │
+    ├── app.module.ts     # Root application module
+    └── main.ts           # Application entry point
 
 ## Support
 
